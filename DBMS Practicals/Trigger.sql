@@ -1,0 +1,27 @@
+-- create database bookstore;
+-- use bookstore;
+-- create table customer(
+-- Customer_ID int primary key,
+-- Customer_name varchar(50) not null,
+-- Email varchar(50) unique,
+-- City varchar(30)
+-- );
+-- insert into customer values
+-- (1,"Anita","anita@gmail.com","Mumbai"),
+-- (2,"Rahul","rahul@gmail.com","Delhi");
+-- create table customer_backup(
+-- Customer_ID int primary key,
+-- Customer_name varchar(50) not null,
+-- Email varchar(50) unique,
+-- City varchar(30)
+-- );
+-- DELIMITER //
+-- CREATE TRIGGER T1
+-- BEFORE DELETE ON customer
+-- FOR EACH ROW
+-- BEGIN
+--     INSERT INTO customer_backup
+--     VALUES (OLD.Customer_ID, OLD.Customer_name,OLD.Email,OLD.City);
+-- END//
+-- DELIMITER ;
+-- delete from customer where Customer_name="Anita";
